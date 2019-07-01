@@ -6,11 +6,6 @@ abstract class BaseRepository
 {
     protected $modelClass;
 
-    public function getAll()
-    {
-        return $this->doQuery(null, $take, $paginate);
-    }
-
     public function findById($id, $fail = true)
     {
         if ($fail) {
