@@ -6,11 +6,8 @@ abstract class BaseRepository
 {
     protected $modelClass;
 
-    public function findById($id, $fail = true)
+    public function findById($id)
     {
-        if ($fail) {
-            return $this->newQuery()->findOrFail($id);
-        }
         return $this->modelClass::where('id', $id)->get()->first();
     }
 
